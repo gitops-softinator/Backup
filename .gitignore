@@ -1,0 +1,31 @@
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.BIN/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.cache
+
+# System files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Large files that might cause issues
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.iso
+*.dmg
+
+# Exclude very large files (uncomment if needed)
+# *.mp4
+# *.avi
+# *.mkv
+# *.mov
