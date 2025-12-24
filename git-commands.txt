@@ -1,0 +1,23 @@
+# Commands to add, commit and push backup
+
+# 1. Remove git lock if exists
+rm -f .git/index.lock
+
+# 2. Add all files (including submodule contents)
+git add -A
+
+# 3. If submodules still show as modified, add them directly:
+# Option A: Add submodules as regular files (removes .git from submodules)
+find . -name ".git" -type d -not -path "./.git" -exec rm -rf {} + 2>/dev/null
+git add -A
+
+# Option B: Or commit submodules as-is (they'll be empty pointers)
+git commit -m "Backup: Downloads, Desktop, and Documents - $(date +'%Y-%m-%d %H:%M:%S')"
+
+# 4. Set remote (if not set)
+git remote add origin https://github.com/gitops-softinator/Backup.git
+
+# 5. Push to GitHub
+git branch -M main
+git push -u origin main
+
